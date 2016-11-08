@@ -273,3 +273,22 @@ Note this file is empty for 2000.
 | `general_combined_party_pct`   | NULL              |
 | `general_winner`               | true              |
 | `notes`                        | NULL              |
+
+## Tidying the Data
+
+A [tidy](http://vita.had.co.nz/papers/tidy-data.pdf) view of this dataset, without any redundant information, will look like this:
+
+| column      | explanation                                              |
+|-------------|----------------------------------------------------------|
+| `state`     | The state abbreviation.                                  |
+| `fec_id`    | FEC Candidate ID.                                        |
+| `district`  | The district, "null" if Senate or President (I think).   |
+| `election`  | `primary`, `primary_runoff`, `general`, `general_runoff` |
+| `candidate` | The name of the candidate.                               |
+| `party`     | The political party of the candidate.                    |
+| `year`      | The election year.                                       |
+| `date`      | The date of the vote.                                    |
+| `votes`     | Number of votes.                                         |
+| `incumbent` | `true` if the candidate is incumbent, `false` otherwise. |
+| `chamber`   | Either `president`, `senate`, or `house`.                |
+
