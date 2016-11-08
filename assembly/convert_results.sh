@@ -15,3 +15,9 @@ for file in $(ls api/*/president/primary_election_results.json); do
     echo "Converting $file."
     ./flat_json_to_csv.sh $file
 done
+
+# More finallier, convert the party labels.
+for file in $(ls api/*/summary/party_labels.json); do
+    echo "Converting $file."
+    ./flat_json_to_csv.sh $file
+done
