@@ -1,3 +1,4 @@
 api/
 .Rproj.user
 *.Rproj
+.Rhistory
