@@ -7,9 +7,7 @@ You can install that gem by cloning [this repo](https://github.com/openelections
 
 So these files are actually _nested_ JSON strings - with one overarching JSON list containing JSON string elements.
 
-> Yo dawg, I heard you needed some JSON.
->
-> So I JSON'd you some JSON wrapped in JSON.
+<img src=http://orig05.deviantart.net/11d4/f/2012/220/5/e/xzibit_yo_dawg_render_by_kernelpanicx-d5aa710.png width=25%>
 
 To convert these JSON'd JSON files into the substantially more useful CSV format, we can use [jq](https://stedolan.github.io/jq/).
 
@@ -120,9 +118,9 @@ Here's what 2006 looks like.
 | `house_votes`  | 1493150       |
 | `total_votes`  | 3019932       |
 
-Here's what I look like
+Here's what I look like thinking about cleaning this mess
 
-![](https://az616578.vo.msecnd.net/files/responsive/embedded/any/desktop/2016/05/07/635981924299738524-97151994_jim%20bustle.com.jpg)
+<img src=https://az616578.vo.msecnd.net/files/responsive/embedded/any/desktop/2016/05/07/635981924299738524-97151994_jim%20bustle.com.jpg width=25%>
 
 ...ish. 
 Either way, we don't need those columns anyway because they contain completely redundant information.
@@ -278,17 +276,17 @@ Note this file is empty for 2000.
 
 A [tidy](http://vita.had.co.nz/papers/tidy-data.pdf) view of this dataset, without any redundant information, will look like this:
 
-| column      | explanation                                              |
-|-------------|----------------------------------------------------------|
-| `state`     | The state abbreviation.                                  |
-| `fec_id`    | FEC Candidate ID.                                        |
-| `district`  | The district, "null" if Senate or President (I think).   |
-| `election`  | `primary`, `primary_runoff`, `general`, `general_runoff` |
-| `candidate` | The name of the candidate.                               |
-| `party`     | The political party of the candidate.                    |
-| `year`      | The election year.                                       |
-| `date`      | The date of the vote.                                    |
-| `votes`     | Number of votes.                                         |
-| `incumbent` | `true` if the candidate is incumbent, `false` otherwise. |
-| `chamber`   | Either `president`, `senate`, or `house`.                |
-
+| column             | description                                              |
+|--------------------|----------------------------------------------------------|
+| `year`             | The election year.                                       |
+| `state`            | The state abbreviation.                                  |
+| `chamber`          | Either "P", "S", or "H".                                 |
+| `district`         | The district, "S" if Senate, "P" if President.           |
+| `election`         | `primary`, `primary_runoff`, `general`, `general_runoff` |
+| `name`             | The name of the candidate.                               |
+| `party`            | The political party of the candidate.                    |
+| `vote`             | Number of votes.                                         |
+| `pct`              | Vote percentage for their race.                          |
+| `incumbent`        | `TRUE` if the candidate is incumbent, `FALSE` otherwise. |
+| `write_in`         | Whether the candidate is a write-in candidate.           |
+| `ballot_modifier`  | `independent` or `unenrolled` or NA.                     |
