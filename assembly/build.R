@@ -203,13 +203,6 @@ congress.tidy <- congress.raw %>%
   mutate(party=coalesce(party_name, party)) %>%
   # Remove the `party_name` field since it's redundant.
   select(-party_name)
-# TODO: Fix up the districts.
-# "H" is okay because it's scattered write-ins for all districts, but let's 
-# make those be NA.
-# For UNEXPIRED / FULL TERM the difference is UNEXPIRED TERM elections are 
-# special elections. We need to create a column called special_election 
-# populated with logicals. 
-# For districts marked with an asterisk we also have special elections.
 
 # *******  CONGRESS SPOT FIXES ******* #
 
