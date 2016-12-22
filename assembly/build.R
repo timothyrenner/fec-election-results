@@ -91,7 +91,15 @@ congress.raw <- congress.2000  %>%
   union_all(congress.2012) %>%
   union_all(congress.2014) %>%
   # Convert the 'incumbent' column into a LOGICAL.
-  mutate(incumbent=as.logical(incumbent))
+  mutate(incumbent=as.logical(incumbent)) %>%
+  # Fix an issue with NY where general_pct isn't filled in.
+  group_by(year, chamber, state, district) %>%
+  mutate(general_pct = 
+           if_else(general_pct == 0.0 & general_votes > 0 & state == "NY",
+                   round(general_votes / sum(general_votes, na.rm=TRUE) * 100,
+                         digits=2),
+                   general_pct)) %>%
+  ungroup()
 
 # Read in the party labels.
 # This is another file I cleaned up manually. With a spreadsheet. Again, this
