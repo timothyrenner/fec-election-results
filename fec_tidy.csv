@@ -37347,7 +37347,7 @@ year,state,chamber,district,election,name,party,vote,pct,incumbent,write_in,ball
 2014,OH,H,13,general,"Pekarek, Thomas",Republican,55233,31.463010327600845,FALSE,FALSE,
 2014,TX,H,13,general,"Pivoda, Emily",Libertarian,2863,2.1779978851435136,FALSE,FALSE,
 2014,NY,H,13,general,"Rangel, Charles B.",Democratic,63437,80.96307735504703,TRUE,FALSE,
-2014,NY,H,13,general,"Rangel, Charles B. #",Working Families,4959,6.329049302515538,TRUE,FALSE,
+2014,NY,H,13,general,"Rangel, Charles B.",Working Families,4959,6.329049302515538,TRUE,FALSE,
 2014,NY,H,13,general,"Rivera, Daniel Vila",Green,9806,12.515155769402575,FALSE,FALSE,
 2014,OH,H,13,general,"Ryan, Tim",Democratic,120230,68.48800050128455,TRUE,FALSE,
 2014,NY,H,13,general,Scattered,,151,0.1927175730348551,FALSE,TRUE,
